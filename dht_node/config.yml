@@ -1,0 +1,26 @@
+# DHT Node Configuration
+
+node:
+  host: "0.0.0.0"
+  port: 8000
+  
+bootstrap:
+  nodes:
+    # Add your bootstrap nodes here
+    # Format: "host:port"
+    # Example:
+    # - "bootstrap1.example.com:8000"
+    # - "158.101.xxx.xxx:8000"
+
+network:
+  k_bucket_size: 20  # Max nodes per bucket
+  alpha: 3  # Parallel queries
+  replication_factor: 3  # How many nodes store each item
+
+storage:
+  max_items: 10000  # Max items to store locally
+  cleanup_interval: 3600  # Seconds between cleanup
+
+logging:
+  level: "INFO"
+  file: "dht_node.log"

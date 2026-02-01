@@ -1,0 +1,20 @@
+[Unit]
+Description=DHT Node for Distributed Knowledge Network
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/distributed-knowledge
+Environment="PATH=/home/ubuntu/distributed-knowledge/venv/bin"
+ExecStart=/home/ubuntu/distributed-knowledge/venv/bin/python3 /home/ubuntu/distributed-knowledge/dht_node.py
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=dht-node
+
+[Install]
+WantedBy=multi-user.target
